@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+#include <climits>
 #include <unistd.h>
 
 // Function to load the vector table
