@@ -81,7 +81,7 @@ void logEvent(std::ofstream &output, int time, int duration, const std::string &
     output << time << ", " << duration << ", " << eventType << std::endl;
 }
 
-// Function to log system status
+// Function to update PCB in the system_status file
 void log_system_status(int currentTime) {
     status << "! -----------------------------------------------------------!" << std::endl;
     status << "Save Time: " << currentTime << " ms" << std::endl;
@@ -211,7 +211,7 @@ void processEND_IO(int eventValue, int duration, std::ofstream &execLogFile, int
 
 void processFORK(int duration, std::ofstream &execLogFile, int &currentTime, std::map<int, std::string> vectorTable)
 {
-    PCB child = pcbTable[currentPid];
+    PCB child = pcbTable[0];
     child.pid = ++currentPid;
     pcbTable.push_back(child);
 
